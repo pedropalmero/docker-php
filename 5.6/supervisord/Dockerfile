@@ -4,4 +4,4 @@ RUN apt-get update && apt-get install -y python-setuptools
 
 RUN easy_install supervisor
 
-CMD ["supervisord"]
+CMD ["supervisord", "-c", "/var/app/current/supervisord.conf"]
