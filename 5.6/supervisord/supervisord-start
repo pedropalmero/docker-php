@@ -1,8 +1,0 @@
-#!/bin/bash
-
-if [ -z "$SUPERVISORD_DISABLED" ]; then
-	exec supervisord
-else
-	echo "Supervisord is disabled by the SUPERVISORD_DISABLED env var"
-fi
-
