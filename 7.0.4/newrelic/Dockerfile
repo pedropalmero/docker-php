@@ -10,6 +10,7 @@ RUN echo "deb http://apt.newrelic.com/debian/ newrelic non-free" > /etc/apt/sour
 RUN apt-get update && apt-get install -yq newrelic-php5 python-setuptools
 ENV NR_INSTALL_PHPLIST /usr/local/bin
 ENV NR_INSTALL_SILENT 1
+RUN newrelic-install install
 
 RUN docker-php-ext-install mbstring zip pdo pdo_mysql bcmath
 
