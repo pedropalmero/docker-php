@@ -1,13 +1,13 @@
-FROM php:5.6.18-fpm
+FROM php:5.6.19-fpm
 
 # Dep libs
 RUN apt-get update && apt-get install -y zlib1g-dev
 
 # Newrelic sources
-RUN curl https://download.newrelic.com/548C16BF.gpg | apt-key add -
-RUN echo "deb http://apt.newrelic.com/debian/ newrelic non-free" > /etc/apt/sources.list.d/newrelic.list
-RUN apt-get update && apt-get install -yq newrelic-php5 python-setuptools
-RUN NR_INSTALL_PHPLIST=/usr/local/bin newrelic-install install
+# RUN curl https://download.newrelic.com/548C16BF.gpg | apt-key add -
+# RUN echo "deb http://apt.newrelic.com/debian/ newrelic non-free" > /etc/apt/sources.list.d/newrelic.list
+# RUN apt-get update && apt-get install -yq newrelic-php5 python-setuptools
+# RUN NR_INSTALL_PHPLIST=/usr/local/bin newrelic-install install
 
 # Imagick
 RUN apt-get update && apt-get install -y libmagickwand-dev
