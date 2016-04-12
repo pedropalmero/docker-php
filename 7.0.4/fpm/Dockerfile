@@ -1,8 +1,10 @@
 FROM php:7.0.4-fpm
 
-RUN apt-get update && apt-get install && apt-get install -y zlib1g-dev
+RUN apt-get update && apt-get install && apt-get install -y zlib1g-dev libicu-dev g++
 
-RUN docker-php-ext-install mbstring zip pdo pdo_mysql bcmath
+RUN docker-php-ext-configure intl
+
+RUN docker-php-ext-install mbstring zip pdo pdo_mysql bcmath intl
 
 # GD 
 RUN apt-get update && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libmcrypt-dev libpng12-dev
