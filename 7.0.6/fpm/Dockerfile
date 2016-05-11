@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
  	--no-install-recommends
 
 RUN docker-php-ext-configure intl
-RUN docker-php-ext-install mbstring zip pdo pdo_mysql bcmath intl
+RUN docker-php-ext-install mbstring zip pdo pdo_mysql bcmath intl sockets
 
 # GD 
 RUN apt-get update && apt-get install -y \
