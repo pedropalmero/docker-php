@@ -2,9 +2,11 @@ FROM php:7.0.6-fpm
 
 RUN apt-get update && apt-get install -y \
 		zlib1g-dev \
+		libicu-dev \
  	--no-install-recommends
 
-RUN docker-php-ext-install mbstring zip pdo pdo_mysql bcmath
+RUN docker-php-ext-configure intl
+RUN docker-php-ext-install mbstring zip pdo pdo_mysql bcmath intl
 
 # GD 
 RUN apt-get update && apt-get install -y \
