@@ -13,6 +13,7 @@ RUN docker-php-ext-install soap mbstring zip pdo pdo_mysql bcmath intl sockets
 RUN yes | pecl install xdebug \
     && echo "zend_extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.coverage_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
     && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 # Newrelic
