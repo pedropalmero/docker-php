@@ -1,4 +1,4 @@
-FROM composer/composer:php7
+FROM composer/composer:1.2
 
 RUN apt-get update && apt-get install && apt-get install -y zlib1g-dev libicu-dev g++ libxml2-dev
 
